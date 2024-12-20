@@ -1,0 +1,180 @@
+@import './null';
+
+body, html {
+  @extend %reg;
+  background-color: #F8F5E2; /* Измененный цвет фона */
+  color: black;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  
+  
+}
+*h1{
+  @extend %bold
+}
+.container{
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  
+}
+.block {
+  width: 100%;
+    scroll-snap-align: start;
+  
+}
+
+.block1 {
+  height: 100vh;
+  padding: 1% 5%;
+  height: 100vh;
+  font-size: 2rem;
+  justify-content: center;
+  display: flex;
+    /* Активируем Flexbox */
+    flex-direction: column;
+  
+  ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    li{
+      p{@extend %reg}
+    }
+  }
+}
+.image-block{
+  align-items: center;
+  width: 100%;
+  padding-bottom: 50px;
+  
+}
+
+.sec-image-1{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  margin: 0;
+  display: none;
+}
+#pc{
+  display: block;
+}
+
+
+///
+/// 
+
+
+.block2 {
+  background-color: #d5d6c1;
+  padding:  5%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  
+  
+  justify-content: center;
+
+}
+
+.grid-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  h2{
+    @extend %prebold;
+    
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  img:hover {
+    transform: scale(1.1, 1.1);
+  } 
+}
+.media_1{
+  display: none;
+}
+////
+///модальное окно
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.scrollable::-webkit-scrollbar {
+  width: 1vw;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: rgb(194, 194, 194);
+  border-radius: 10px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: #64656b;
+  border-radius: 10px;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+body.modal-open {
+  overflow: hidden; /* Отключаем прокрутку при открытом модальном окне */
+}
+.popup-content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  
+ 
+}
+.close-btn {
+  position: absolute;
+  color: white;
+  top: 2vh;
+  right: 3vw;
+  cursor: pointer;
+}
+
+.scrollable{
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: auto;
+}
+.non-scroll{
+  max-height: 90vh;
+}
+.popup-img {
+  
+  max-width: 70vw;
+  padding: 0 1vw;
+  object-fit: contain
+}
+
+
+
+@import './media2';
